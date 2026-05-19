@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Abdur Rob - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #3b82f6;
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #cbd5e1;
+            color: var(--text-medium);
+            line-height: 1.6;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .controls {
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            box-shadow: none;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-light);
+        }
+
+        .cv-container {
+            background: white;
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 3rem 4rem;
+        }
+
+        /* Header */
+        .cv-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .cv-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .cv-title {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .cv-contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .cv-contact span:not(:last-child)::after {
+            content: "|";
+            margin-left: 0.5rem;
+            color: var(--text-light);
+            opacity: 0.6;
+        }
+
+        /* Sections */
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        /* Text Content */
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid for Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-item h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .experience-company {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .experience-item p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-item ul {
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            border: 1px solid var(--border);
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+
+            .controls {
+                display: none;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .cv-header {
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
+
+            .cv-name {
+                font-size: 20pt;
+            }
+
+            .cv-title {
+                font-size: 11pt;
+                margin-bottom: 5px;
+            }
+
+            .cv-section {
+                margin-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 11pt;
+                margin-bottom: 5px;
+                padding-bottom: 2px;
+            }
+
+            p, ul {
+                margin-bottom: 5px;
+            }
+
+            .experience-item {
+                margin-bottom: 5px;
+            }
+            
+            .experience-header {
+                margin-bottom: 2px;
+            }
+            
+            .skill-item h4 {
+                margin-bottom: 0px;
+            }
+            
+            .tags {
+                margin-bottom: 0px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="controls">
+        <button onclick="window.print()" class="btn"><i class="fas fa-print"></i> Print / Save as PDF</button>
+        <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+
+    <div class="cv-container">
+
+        <header class="cv-header">
+            <h1 class="cv-name">Md. Abdur Rob</h1>
+            <h2 class="cv-title">Computer Science Student & Entrepreneur</h2>
+            <div class="cv-contact">
+                <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                <span><i class="fas fa-phone-alt"></i> +8801710969175</span>
+                <span><i class="fas fa-envelope"></i> abdurrob2324@gmail.com</span>
+                <span><i class="fab fa-facebook"></i> facebook.com/withabdurrob</span>
+            </div>
+        </header>
+
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-user-circle"></i> Executive Summary</h3>
+            <p>A dynamic Computer Science & Engineering student and entrepreneur with a proven track record in
+                leadership and business development. Blending technical insight from a CSE background with hands-on
+                experience in operations, financial management, and supply chain logistics. Currently driving
+                agricultural e-commerce innovation as a Co-Founder, focusing on delivering regional specialties directly
+                to consumers.</p>
+        </section>
+
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">Co-Founder</span> |
+                        <span class="experience-company">Mango Carnival</span>
+                    </div>
+                    <span class="experience-date">May 2025 – Present</span>
+                </div>
+                <ul>
+                    <li>Spearheading an entrepreneurial venture focused on sourcing and distributing premium, fresh
+                        mangoes directly from Chapainawabganj to urban markets.</li>
+                    <li>Managing end-to-end supply chain logistics, product quality control, and seasonal marketing
+                        campaigns to deliver a seamless consumer experience.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">Treasurer</span> |
+                        <span class="experience-company">BRAC University Research for Development Club (ReD)</span>
+                    </div>
+                    <span class="experience-date">February 2025 – February 2026</span>
+                </div>
+                <ul>
+                    <li>Managed the club’s financial allocations, budget tracking, and resource management for various
+                        university-level development and research events.</li>
+                    <li>Collaborated with executive panel members to streamline organizational funding and ensure fiscal
+                        accountability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">B.Sc. in Computer Science & Engineering (CSE)</span>
+                    </div>
+                    <span class="experience-date">January 2022 – Present</span>
+                </div>
+                <p class="experience-company">BRAC University</p>
+                <ul>
+                    <li>Developing strong analytical, programming, and technical problem-solving skills within a
+                        rigorous academic environment.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <span class="experience-title">Higher Secondary Certificate (HSC)</span>
+                    </div>
+                    <span class="experience-date">Class of 2020</span>
+                </div>
+                <p class="experience-company">Shahid Abul Hasnat Muhammad Kamaruzzaman Govt. Degree College</p>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-cogs"></i> Core Competencies</h3>
+            <ul>
+                <li><strong>Business & Entrepreneurship:</strong> Startup strategy, supply chain management, regional sourcing, and e-commerce operations.</li>
+                <li><strong>Leadership & Governance:</strong> Financial oversight, budget tracking, community management, and student organization leadership.</li>
+                <li><strong>Technical Foundation:</strong> Analytical problem-solving, software engineering principles, and data-driven logic, utilizing languages and tools such as Python, JavaScript, SQL, and React.</li>
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-heart"></i> Interests & Focus Areas</h3>
+            <div class="tags">
+                <span class="tag">Agri-tech Startups</span>
+                <span class="tag">Development Sector Research</span>
+                <span class="tag">Community Building</span>
+                <span class="tag">Supply Chain Logistics</span>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
